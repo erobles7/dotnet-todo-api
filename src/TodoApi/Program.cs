@@ -1,8 +1,12 @@
+using TodoApi.Interfaces;
+using TodoApi.Services;
+
 var builder = WebApplication.CreateBuilder(args);
         
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddTransient<IWeatherService, WeatherService>();
 
 var app = builder.Build();
         
